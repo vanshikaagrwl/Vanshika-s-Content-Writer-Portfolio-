@@ -1,0 +1,971 @@
+/* ==========================================================================
+   VINTAGE EDITORIAL & FLAMENCO ZINE THEMING
+   Vanshika Agrawal - Content Writer Portfolio
+   ========================================================================== */
+
+/* Typography & Visual Variables */
+:root {
+  --bg-light: #f6f3eb;         /* Textured aged-cream paper */
+  --bg-dark: #5e0a14;          /* Dramatic deep crimson / wine red */
+  --text-dark: #1b1717;        /* Off-black / charcoal */
+  --text-light: #f6f3eb;       /* Off-white paper text */
+  --crimson: #84101c;          /* Mid-tone rose crimson */
+  --rose-bright: #a81c2d;      /* Vibrant red rose accent */
+  --gold-mute: #b89365;        /* Vintage muted gold border */
+  --font-title: 'Cormorant Garamond', 'Playfair Display', serif;
+  --font-body: 'Lora', 'Georgia', serif;
+  --font-accent: 'Playfair Display', serif;
+  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --paper-grain: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
+}
+
+/* Reset & Base Elements */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+/* Base Typographic Rhythm */
+h1, h2, h3, h4 {
+  font-family: var(--font-title);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 15px;
+  letter-spacing: 0.02em;
+}
+
+/* Custom Selection Highlight */
+::selection {
+  background-color: var(--crimson);
+  color: var(--text-light);
+}
+
+/* ==========================================================================
+   NAVIGATION
+   ========================================================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  background: rgba(246, 243, 235, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px double rgba(94, 10, 20, 0.15);
+  transition: var(--transition);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: var(--font-title);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--crimson);
+  letter-spacing: 4px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-link {
+  font-family: var(--font-accent);
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--text-dark);
+  text-decoration: none;
+  letter-spacing: 2px;
+  padding: 6px 4px;
+  position: relative;
+  transition: var(--transition);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--crimson);
+  transition: var(--transition);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: var(--crimson);
+}
+
+.btn-contact {
+  border: 1px solid var(--crimson);
+  color: var(--crimson);
+  padding: 8px 18px;
+  border-radius: 0; /* Vintage structural look */
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.btn-contact:hover {
+  background: var(--crimson);
+  color: var(--text-light) !important;
+}
+
+/* ==========================================================================
+   HERO / MAGAZINE COVER
+   ========================================================================== */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+  display: flex;
+  align-items: center;
+  background: #110204;
+}
+
+.hero-visual {
+  position: absolute;
+  inset: 0;
+  background: url('magazine_bg.png') no-repeat center center/cover;
+  filter: brightness(0.4) contrast(1.1) grayscale(15%);
+  mix-blend-mode: normal;
+  opacity: 0.9;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(94, 10, 20, 0.25) 0%, rgba(17, 2, 4, 0.85) 80%);
+}
+
+.hero-inner {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 40px;
+}
+
+.hero-left {
+  flex: 1;
+  max-width: 680px;
+}
+
+.hero-left h1 {
+  font-size: 96px;
+  line-height: 0.85;
+  letter-spacing: 4px;
+  color: var(--text-light);
+  font-family: var(--font-title);
+  margin-bottom: 5px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.hero-left h2 {
+  font-size: 54px;
+  color: var(--gold-mute);
+  font-family: var(--font-title);
+  font-style: italic;
+  text-transform: none;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.role {
+  color: var(--text-light);
+  font-family: var(--font-accent);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.hero-line {
+  height: 1px;
+  width: 120px;
+  background: var(--gold-mute);
+  margin: 25px 0;
+}
+
+.tag {
+  color: #d6cfc5;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 17px;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.hero-ctas {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+.cta {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 0;
+  font-family: var(--font-title);
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: var(--crimson);
+  color: var(--text-light);
+  text-decoration: none;
+  border: 1px solid var(--crimson);
+  transition: var(--transition);
+}
+
+.cta:hover {
+  background: transparent;
+  border-color: var(--text-light);
+}
+
+.cta.ghost {
+  background: transparent;
+  border: 1px solid rgba(246, 243, 235, 0.25);
+  color: var(--text-light);
+}
+
+.cta.ghost:hover {
+  background: var(--text-light);
+  color: var(--bg-dark);
+  border-color: var(--text-light);
+}
+
+/* Hero Floating Collage Cards */
+.hero-cards {
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: flex-end;
+}
+
+.card {
+  width: 280px;
+  padding: 24px;
+  border-radius: 0;
+  background: rgba(17, 2, 4, 0.7);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(246, 243, 235, 0.08);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateX(-10px);
+  border-color: var(--gold-mute);
+}
+
+.card h3 {
+  font-size: 13px;
+  font-family: var(--font-accent);
+  color: var(--gold-mute);
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.card p {
+  font-size: 13px;
+  font-family: var(--font-body);
+  color: #dfd8cf;
+  font-style: italic;
+}
+
+.card.red {
+  border-left: 3px solid var(--crimson);
+}
+
+.card.light {
+  border-left: 3px solid var(--text-light);
+}
+
+.card.mid {
+  border-left: 3px solid var(--gold-mute);
+}
+
+/* ==========================================================================
+   SECTION TITLE ACCENTS (Vintage Zine Style)
+   ========================================================================== */
+.section-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: 38px;
+  font-family: var(--font-title);
+  color: inherit;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.title-accent {
+  height: 1px;
+  width: 80px;
+  background: currentColor;
+  position: relative;
+  opacity: 0.6;
+}
+
+.title-accent::after {
+  content: '♦';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  font-size: 12px;
+  padding: 0 8px;
+}
+
+/* ==========================================================================
+   INTRODUCTION & HIGH-CONTRAST PORTRAIT
+   ========================================================================== */
+.introduction {
+  padding: 100px 30px;
+  background-color: var(--bg-light);
+  background-image: var(--paper-grain);
+  background-size: 24px 24px;
+  color: var(--text-dark);
+  border-bottom: 1px double rgba(94, 10, 20, 0.15);
+}
+
+.intro-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.intro-avatar-wrapper {
+  flex-shrink: 0;
+  width: 320px;
+  height: 380px;
+  border-radius: 0;
+  overflow: hidden;
+  border: 1px solid var(--crimson);
+  padding: 12px;
+  background: var(--bg-light);
+  box-shadow: 12px 12px 0px var(--crimson);
+  transition: var(--transition);
+}
+
+.intro-avatar-wrapper:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 16px 16px 0px var(--rose-bright);
+}
+
+.intro-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.3) sepia(10%);
+  transition: var(--transition);
+}
+
+.intro-avatar-wrapper:hover .intro-avatar {
+  filter: grayscale(80%) contrast(1.1) sepia(5%);
+}
+
+.intro-card {
+  flex: 1;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.intro-card h2 {
+  font-size: 28px;
+  color: var(--crimson);
+  margin-bottom: 24px;
+  font-family: var(--font-title);
+  letter-spacing: 2px;
+}
+
+.intro-card p {
+  color: var(--text-dark);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+.contact-quick {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 22px;
+  background: transparent;
+  border: 1px solid var(--text-dark);
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 12px;
+  font-family: var(--font-accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.contact-badge:hover {
+  background: var(--crimson);
+  color: var(--text-light) !important;
+  border-color: var(--crimson);
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   [1] CORE SKILLS (Rich Wine Red Backdrop)
+   ========================================================================== */
+.skills {
+  padding: 100px 30px;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  position: relative;
+}
+
+.skills::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--paper-grain);
+  background-size: 30px 30px;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 30px;
+  border-radius: 0;
+  border: 1px solid rgba(246, 243, 235, 0.08);
+  transition: var(--transition);
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold-mute);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.skill-header h3 {
+  font-size: 18px;
+  font-family: var(--font-title);
+  color: var(--text-light);
+  letter-spacing: 1px;
+}
+
+.skill-level {
+  font-size: 11px;
+  font-family: var(--font-accent);
+  letter-spacing: 2px;
+  color: var(--gold-mute);
+  border: 1px solid var(--gold-mute);
+  padding: 4px 8px;
+}
+
+.skill-content p {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #dfd8cf;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.skill-bar {
+  height: 2px;
+  background: rgba(246, 243, 235, 0.15);
+  margin-top: 20px;
+}
+
+.skill-fill {
+  height: 100%;
+  background: var(--gold-mute);
+}
+
+/* ==========================================================================
+   [2] EXPERIENCE TIMELINE (Aged Cream Paper Backdrop)
+   ========================================================================== */
+.experience {
+  padding: 100px 30px;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+.experience-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.experience-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 50px;
+  position: relative;
+}
+
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 32px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: rgba(94, 10, 20, 0.15);
+}
+
+.experience-card {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  position: relative;
+  transition: var(--transition);
+}
+
+.experience-card .exp-marker {
+  min-width: 64px;
+  height: 64px;
+  border-radius: 0;
+  background: var(--bg-light);
+  border: 1px solid var(--crimson);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--crimson);
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 16px;
+  z-index: 10;
+  transition: var(--transition);
+}
+
+.experience-card:hover .exp-marker {
+  background: var(--crimson);
+  color: var(--text-light);
+  box-shadow: 0 0 15px rgba(94,10,20,0.2);
+}
+
+.experience-card .exp-content {
+  background: #fbf9f4;
+  padding: 30px;
+  border-radius: 0;
+  border: 1px solid rgba(94, 10, 20, 0.08);
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.02);
+  flex: 1;
+  transition: var(--transition);
+}
+
+.experience-card:hover .exp-content {
+  border-color: var(--crimson);
+  transform: translateX(5px);
+}
+
+.experience-card h3 {
+  font-size: 20px;
+  color: var(--text-dark);
+  font-family: var(--font-title);
+  margin-bottom: 6px;
+}
+
+.company {
+  font-family: var(--font-accent);
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--crimson);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.period {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 13px;
+  color: #7b7171;
+  margin-bottom: 15px;
+}
+
+.exp-details p {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-dark);
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   [3] PUBLISHED WRITING (Rich Burgundy Showcase)
+   ========================================================================== */
+.portfolio {
+  padding: 100px 30px;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  position: relative;
+}
+
+.portfolio-showcase {
+  max-width: 1200px;
+  margin: 50px auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.portfolio-card {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 35px;
+  border-radius: 0;
+  border: 1px solid rgba(246, 243, 235, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+
+.portfolio-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--gold-mute);
+  transform: translateY(-5px);
+}
+
+.portfolio-tag {
+  font-family: var(--font-accent);
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--gold-mute);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.portfolio-card h3 {
+  font-size: 22px;
+  font-family: var(--font-title);
+  color: var(--text-light);
+  margin-bottom: 12px;
+}
+
+.portfolio-card p {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #dfd8cf;
+  font-style: italic;
+  line-height: 1.65;
+  margin-bottom: 25px;
+}
+
+.portfolio-link {
+  font-family: var(--font-title);
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--gold-mute);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.portfolio-link:hover {
+  color: var(--text-light);
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   [4] WRITER ATTRIBUTES (Cream Editorial Columns)
+   ========================================================================== */
+.attributes {
+  padding: 100px 30px;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+.attributes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  max-width: 1200px;
+  margin: 50px auto 0;
+}
+
+.attribute-box {
+  background: #fbf9f4;
+  padding: 30px 20px;
+  border-radius: 0;
+  border: 1px solid rgba(94, 10, 20, 0.08);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.attribute-box:hover {
+  border-color: var(--crimson);
+  transform: translateY(-5px);
+}
+
+.attribute-box h4 {
+  font-family: var(--font-accent);
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--crimson);
+  margin-bottom: 12px;
+}
+
+.attribute-box p {
+  font-family: var(--font-title);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+.attr-bar {
+  height: 2px;
+  background: rgba(94, 10, 20, 0.08);
+  margin-top: 15px;
+}
+
+.attr-fill {
+  height: 100%;
+  background: var(--crimson);
+}
+
+/* ==========================================================================
+   [5] EDUCATION (Classical Zine Certificate Backdrop)
+   ========================================================================== */
+.education {
+  padding: 100px 30px;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  position: relative;
+}
+
+.education-card {
+  max-width: 760px;
+  margin: 40px auto 0;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 45px;
+  border-radius: 0;
+  border: 1px double rgba(246, 243, 235, 0.2);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.education-card:hover {
+  border-color: var(--gold-mute);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.education-card h3 {
+  font-size: 26px;
+  font-family: var(--font-title);
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+
+.major {
+  font-family: var(--font-accent);
+  font-size: 13px;
+  letter-spacing: 4px;
+  color: var(--gold-mute);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.university {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-style: italic;
+  color: #dfd8cf;
+}
+
+/* ==========================================================================
+   [6] GET IN TOUCH (Dramatic Classical Call Block)
+   ========================================================================== */
+.contact {
+  padding: 100px 30px;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+.contact-box {
+  display: flex;
+  gap: 24px;
+  max-width: 800px;
+  margin: 40px auto 0;
+  justify-content: center;
+}
+
+.contact-method {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 20px 30px;
+  background: #fbf9f4;
+  border-radius: 0;
+  color: var(--text-dark);
+  text-decoration: none;
+  border: 1px solid rgba(94, 10, 20, 0.1);
+  font-family: var(--font-accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 12px;
+  transition: var(--transition);
+}
+
+.contact-method:hover {
+  border-color: var(--crimson);
+  background: var(--crimson);
+  color: var(--text-light) !important;
+  transform: translateY(-4px);
+}
+
+.method-icon {
+  font-size: 16px;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer {
+  padding: 40px 30px;
+  text-align: center;
+  color: #7b7171;
+  background: var(--bg-light);
+  border-top: 1px double rgba(94, 10, 20, 0.15);
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   MOBILE & VIEWPORT RESPONSIVENEES
+   ========================================================================== */
+@media(max-width: 980px) {
+  .hero-left h1 {
+    font-size: 64px;
+  }
+  .hero-left h2 {
+    font-size: 38px;
+  }
+  .hero-cards {
+    display: none;
+  }
+  .intro-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .intro-avatar-wrapper {
+    width: 250px;
+    height: 300px;
+    box-shadow: 8px 8px 0px var(--crimson);
+  }
+  .intro-card p {
+    text-align: center;
+  }
+  .contact-quick {
+    justify-content: center;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .portfolio-showcase {
+    grid-template-columns: 1fr;
+  }
+  .attributes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 640px) {
+  .hero-left h1 {
+    font-size: 48px;
+  }
+  .hero-left h2 {
+    font-size: 30px;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .attributes-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .contact-method {
+    justify-content: center;
+  }
+}

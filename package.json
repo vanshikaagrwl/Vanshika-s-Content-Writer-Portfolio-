@@ -1,0 +1,18 @@
+{
+  "name": "vanshika-portfolio",
+  "version": "1.0.0",
+  "description": "Vanshika Agrawal - Content Writer Portfolio",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "deploy": "echo 'Deploy to GitHub Pages, Netlify, or Vercel'"
+  },
+  "keywords": [
+    "portfolio",
+    "content-writer",
+    "seo",
+    "technical-writing"
+  ],
+  "author": "Vanshika Agrawal",
+  "license": "MIT"
+}
